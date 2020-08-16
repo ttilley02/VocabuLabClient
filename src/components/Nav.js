@@ -12,23 +12,23 @@ export default class Nav extends Component {
   };
   renderLogoutLink() {
     return (
-      <div className="Header__logged-in">
+      <li className="Header__logged-in">
         <Link onClick={this.handleLogoutClick} to="/">
           Logout
         </Link>
-      </div>
+      </li>
     );
   }
 
   renderLoginLink() {
     return (
       <>
-        <div className="Header__not-logged-in">
+        <li className="Header__not-logged-in">
           <Link to="/login">Log in</Link>
-        </div>
-        <div>
+        </li>
+        <li>
           <Link to="/reg">Register</Link>
-        </div>
+        </li>
       </>
     );
   }
@@ -37,19 +37,25 @@ export default class Nav extends Component {
     return (
       <>
         <nav className="header">
-          <h1>
-            <Link to="/">Vocabulab</Link>
-          </h1>
+          <Link to="/" className="title">
+            Vocabulab
+          </Link>
+          <input class="menu-btn" type="checkbox" id="menu-btn" />
+          <label class="menu-icon" for="menu-btn">
+            <span class="navicon"></span>
+          </label>
 
-          <div>
-            <Link to="/cards"> Cards </Link>
-          </div>
-          <div>
-            <Link to="/profile"> My Cards </Link>
-          </div>
-          {TokenService.hasAuthToken()
-            ? this.renderLogoutLink()
-            : this.renderLoginLink()}
+          <ul className="menu">
+            <li>
+              <Link to="/cards"> Cards </Link>
+            </li>
+            <li>
+              <Link to="/profile"> My Cards </Link>
+            </li>
+            {TokenService.hasAuthToken()
+              ? this.renderLogoutLink()
+              : this.renderLoginLink()}
+          </ul>
         </nav>
       </>
     );

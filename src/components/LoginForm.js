@@ -54,7 +54,12 @@ export default class LoginForm extends Component {
               User name
               <br />{" "}
             </label>
-            <Input required name="user_name" id="LoginForm__user_name" />
+            <Input
+              required
+              name="user_name"
+              id="LoginForm__user_name"
+              placeholder="testperson1"
+            />
           </div>
           <br />
           <div className="user-box">
@@ -67,6 +72,7 @@ export default class LoginForm extends Component {
               name="password"
               type="password"
               id="LoginForm__password"
+              placeholder="password"
             />
           </div>
           <br />
