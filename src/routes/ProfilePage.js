@@ -19,19 +19,25 @@ export default class ProfilePage extends Component {
       });
   }
 
+  renderFavs() {
+    const favsList = this.context.favoriteCards;
+    console.log(this.context.favoriteCards);
+    if (this.context.favoriteCards[0] === undefined) {
+      return <p>You have no favorite cards. Add some in the CARDS section!</p>;
+    } else {
+      return favsList.map((card) => (
+        <UserCards
+          key={card.id}
+          card={card}
+          note={card.note}
+          noteClickUpdate={this.noteClickUpdate}
+          history={this.props.history}
+        />
+      ));
+    }
+  }
+
   render() {
-    return (
-      <div className="App__main">
-        {this.context.favoriteCards.map((card) => (
-          <UserCards
-            key={card.id}
-            card={card}
-            note={card.note}
-            noteClickUpdate={this.noteClickUpdate}
-            history={this.props.history}
-          />
-        ))}
-      </div>
-    );
+    return <div className="App__main">{this.renderFavs()}</div>;
   }
 }
