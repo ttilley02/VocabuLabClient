@@ -7,17 +7,8 @@ import Context from "../context";
 export default class Card extends Component {
   static contextType = Context;
 
-  handleQuestionClick = (ev) => {
-    ev.preventDefault();
-    var x = ev.currentTarget.childNodes[1];
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  };
-
   handleDeleteClick = (ev) => {
+    //API request to delete the card reference per the ID of current card.  Note table being deleted which calls user Cards
     ev.preventDefault();
     this.setState({ error: null });
 
@@ -34,17 +25,18 @@ export default class Card extends Component {
 
   render() {
     const { card } = this.props;
-    console.log(this.props.note);
     let noteMessage;
 
+    //if the user has already entered a note show "Edit" if not show "Add"
     if (this.props.note === null) {
-      noteMessage = "Add a Note";
+      noteMessage = "Add Note";
     } else {
       noteMessage = "Edit Note";
     }
 
     return (
-      <div className="flip flip-vertical m">
+      //Other side of the card with the options to delete from your favorites or make a note.
+      <div className="flip flip-vertical">
         <div className="front">
           <h1 className="text-shadow">{card.spa_content}</h1>
         </div>
@@ -58,7 +50,7 @@ export default class Card extends Component {
           >
             delete
           </button>
-          <p>
+          <div>
             <Link
               to={{ pathname: `/addNote/${card.id}` }}
               history={this.props.history}
@@ -68,7 +60,7 @@ export default class Card extends Component {
             <section className="">
               <div>{this.props.note}</div>
             </section>
-          </p>
+          </div>
         </div>
       </div>
     );

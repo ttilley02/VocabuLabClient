@@ -21,7 +21,6 @@ export default class ProfilePage extends Component {
 
   renderFavs() {
     const favsList = this.context.favoriteCards;
-    console.log(this.context.favoriteCards);
     if (this.context.favoriteCards[0] === undefined) {
       return <p>You have no favorite cards. Add some in the CARDS section!</p>;
     } else {

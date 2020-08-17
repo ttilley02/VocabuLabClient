@@ -40,9 +40,9 @@ export default class Nav extends Component {
           <Link to="/" className="title">
             Vocabulab
           </Link>
-          <input class="menu-btn" type="checkbox" id="menu-btn" />
-          <label class="menu-icon" for="menu-btn">
-            <span class="navicon"></span>
+          <input className="menu-btn" type="checkbox" id="menu-btn" />
+          <label className="menu-icon" htmlFor="menu-btn">
+            <span className="navicon"></span>
           </label>
 
           <ul className="menu">
@@ -53,7 +53,7 @@ export default class Nav extends Component {
               <Link to="/profile"> My Cards </Link>
             </li>
             {TokenService.hasAuthToken()
-              ? this.renderLogoutLink()
+              ? this.renderLogoutLink() //User Logged in? Show Logout option. Logged out? Show Reg and Login
               : this.renderLoginLink()}
           </ul>
           <br />

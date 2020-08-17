@@ -20,7 +20,7 @@
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 29px;
   display: block;
 }
 
@@ -42,7 +42,7 @@ h2 {
 .flip > .back {
   display: block;
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition-duration: 0.5s;
+  transition-duration: 0.9s;
   transition-property: transform, opacity;
 }
 .flip > .front {
@@ -87,7 +87,7 @@ h2 {
   width: inherit;
   background-size: cover !important;
   background-position: center !important;
-  height: 220px;
+  height: 275px;
   padding: 1em 2em;
   background: #335563;
   border-radius: 10px;
@@ -102,6 +102,11 @@ h2 {
   font-size: 0.9125rem;
   line-height: 160%;
   color: #999;
+}
+
+section {
+  word-wrap: break-word;
+  font-size: larger;
 }
 
 .text-shadow {

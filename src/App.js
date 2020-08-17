@@ -19,7 +19,11 @@ export default class App extends Component {
     hasError: false,
     cards: [],
     favoriteCards: [],
-    UserLoggedIn: ""
+    UserLoggedIn: "",
+    noteName: {
+      value: "",
+      touched: false
+    }
   };
 
   updateCards = (newCards) => {
@@ -43,6 +47,10 @@ export default class App extends Component {
 
   grabMoreCards = (yesOrNo) => {
     this.setState(this.state);
+  };
+
+  updateAddNoteName = (event) => {
+    this.setState({ noteName: { value: event.target.value, touched: true } });
   };
 
   componentDidMount() {
@@ -109,7 +117,9 @@ export default class App extends Component {
       deleteNotefromPage: this.deleteNotefromPage,
       updateLogIn: this.updateLogIn,
       grabMoreCards: this.grabMoreCards,
-      updateCards: this.updateCards
+      updateCards: this.updateCards,
+      noteName: this.state.noteName,
+      updateAddNoteName: this.updateAddNoteName
     };
     return (
       //load the 5 routes and the header

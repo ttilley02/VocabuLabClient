@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
 export default class Features extends Component {
+  //description of the app and citations as needed.
   render() {
     return (
       <>
-        <p list-style="none" className="main">
-          <p>
-            <i> Powered by the University of Texas at Austin</i>
-          </p>
+        <div list-style="none" className="main">
+          <i> Powered by the University of Texas at Austin</i>
+
           <h3>
             Beginner and Intermediate card exercises powered by the University
             of Texas Spanish Program. Get into the weeds with grammar, phrases
@@ -20,7 +20,7 @@ export default class Features extends Component {
             with a focused approach to learning spanish. FAVORITE your cards and
             personalize them with NOTES for later reference and extra practice.
           </h3>
-        </p>
+        </div>
       </>
     );
   }
