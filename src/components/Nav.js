@@ -56,6 +56,7 @@ export default class Nav extends Component {
               ? this.renderLogoutLink()
               : this.renderLoginLink()}
           </ul>
+          <br />
         </nav>
       </>
     );

@@ -14,6 +14,6 @@ export default class LangChoice extends Component {
   }
 
   render() {
-    return <div className="arena">{this.renderCards()}</div>;
+    return <div className="App__main">{this.renderCards()}</div>;
   }
 }

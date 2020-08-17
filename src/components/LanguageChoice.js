@@ -4,7 +4,7 @@ export default class Main1 extends Component {
   render() {
     return (
       <>
-        <h2>Spanish VocabuLab</h2>
+        <h2>Spanish</h2>
       </>
     );
   }

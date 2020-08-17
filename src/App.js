@@ -102,7 +102,7 @@ export default class App extends Component {
           <header className="App__header">
             <Nav />
           </header>
-          <main className="App__main">
+          <main>
             {this.state.hasError && (
               <p className="red">There was an error! Oh no!</p>
             )}

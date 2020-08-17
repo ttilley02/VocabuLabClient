@@ -4,7 +4,7 @@ export default class Features extends Component {
   render() {
     return (
       <>
-        <div list-style="none" className="main">
+        <p list-style="none" className="main">
           <h3>
             Beginner and Intermediate card exercises powered by the University
             of Texas Spanish Program. Get into the weeds with grammar, phrases
@@ -18,7 +18,7 @@ export default class Features extends Component {
             FAVORITE your cards and personalize them with NOTES for later
             reference and extra practice.
           </h3>
-        </div>
+        </p>
       </>
     );
   }

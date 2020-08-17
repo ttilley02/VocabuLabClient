@@ -21,7 +21,7 @@ export default class ProfilePage extends Component {
 
   render() {
     return (
-      <div className="arena">
+      <div className="App__main">
         {this.context.favoriteCards.map((card) => (
           <UserCards
             key={card.id}
