@@ -22,6 +22,10 @@ export default class App extends Component {
     UserLoggedIn: ""
   };
 
+  updateCards = (newCards) => {
+    this.setState({ cards: newCards });
+  };
+
   updateFavoriteCards = (favs) => {
     this.setState({ favoriteCards: favs });
   };
@@ -37,8 +41,14 @@ export default class App extends Component {
     this.setState({ UserLoggedIn: yesOrNo });
   };
 
+  grabMoreCards = (yesOrNo) => {
+    this.setState(this.state);
+  };
+
   componentDidMount() {
-    //fetch request for cards
+    //primary fetch for the App.  Determines if the user is logged on or not and
+    //renders the users cards in the event that they are logged in already from
+    //and earlier session.
     let areWeLoggedIn = TokenService.getAuthToken();
     if (areWeLoggedIn === null) {
       fetch(Config.API_ENDPOINT + "/api/cards")
@@ -61,6 +71,7 @@ export default class App extends Component {
         .then((response) => response.json())
         .then((data) => {
           //store response in this.state.cards. 3 random cards
+
           let cardArray = [];
           let random1 = Math.floor(Math.random() * 189 - 1);
           let random2 = Math.floor(Math.random() * 189 - 1);
@@ -71,6 +82,8 @@ export default class App extends Component {
 
           this.setState({ cards: cardArray });
         });
+
+      //If the user has any cards in their profile fetch them as well.
       fetch(`${Config.API_ENDPOINT}/api/cards/mycards`, {
         headers: {
           Authorization: `bearer ${TokenService.getAuthToken()}`
@@ -94,9 +107,12 @@ export default class App extends Component {
       favoriteCards: this.state.favoriteCards,
       updateFavoriteCards: this.updateFavoriteCards,
       deleteNotefromPage: this.deleteNotefromPage,
-      updateLogIn: this.updateLogIn
+      updateLogIn: this.updateLogIn,
+      grabMoreCards: this.grabMoreCards,
+      updateCards: this.updateCards
     };
     return (
+      //load the 5 routes and the header
       <Context.Provider value={contextValue}>
         <div className="App">
           <header className="App__header">
