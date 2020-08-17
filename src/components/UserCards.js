@@ -44,7 +44,7 @@ export default class Card extends Component {
     }
 
     return (
-      <div className="flip flip-vertical">
+      <div className="flip flip-vertical m">
         <div className="front">
           <h1 className="text-shadow">{card.spa_content}</h1>
         </div>

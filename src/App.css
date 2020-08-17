@@ -19,6 +19,11 @@
   float: left;
 }
 
+h2 {
+  font-size: 32px;
+  display: block;
+}
+
 .App__main {
   margin-top: 50px;
 }
@@ -187,7 +192,7 @@ button {
 
 .header ul {
   margin: 0;
-  padding: 0;
+  padding-right: 0;
   list-style: none;
   overflow: hidden;
 }
@@ -288,16 +293,23 @@ button {
 
 /* Responsive */
 /* small screens and mobile */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 777px) {
+  .menu {
+    padding: 0;
+  }
+
   .header ul {
     background-color: #fff;
+    opacity: 0.8;
+    width: 100px;
+    float: right;
   }
   .header li a {
-    padding: 15px;
     border-bottom: 1px dotted #ddd;
+    font-size: 12px;
   }
   .App {
-    width: 90%;
+    width: 80%;
     margin: auto;
   }
   .flip {
@@ -309,7 +321,7 @@ button {
 }
 
 /*medium & large screens */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 777px) {
   .menu-wrapper {
     height: 55px;
     line-height: 55px;
@@ -318,13 +330,13 @@ button {
   .header li {
     float: left;
   }
+
   .header .logo {
     line-height: 1;
   }
   .header li a {
     color: #fff;
     padding: 5px 20px;
-
     font-size: 12px;
   }
   .header .menu {
@@ -335,9 +347,9 @@ button {
   .header .menu-icon {
     display: none;
   }
-  p.main {
-    width: 800px;
-    text-align: center;
+
+  .App {
+    width: 700px;
     margin: auto;
   }
 }
