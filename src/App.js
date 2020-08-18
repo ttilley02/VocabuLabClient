@@ -45,10 +45,6 @@ export default class App extends Component {
     this.setState({ UserLoggedIn: yesOrNo });
   };
 
-  grabMoreCards = (yesOrNo) => {
-    this.setState(this.state);
-  };
-
   updateAddNoteName = (event) => {
     this.setState({ noteName: { value: event.target.value, touched: true } });
   };
